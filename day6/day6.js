@@ -1,6 +1,8 @@
+// pseudo code to solve the task
 // person1.name equals to my name
 // alert("i am shreya")
-// alert()
+//else alert()
+
 // const person = { personName1: "Shreya", age: 24 };
 // if (person.personName1 === "Shreya") {
 //   alert(person.personName1);
@@ -8,15 +10,16 @@
 //   alert(person.personName2);
 // }
 
-// function
-// function add() {
-//   let a = 10;
-//   let b = 20;
-//   if (a > b) {
-//     return alert("hhhh");
-//   }
-// }
-// add()
+// function declaration
+function add() {
+  let a = 10;
+  let b = 20;
+  if (a > b) {
+    return alert("hhhh");
+  }
+}
+// function call
+add();
 
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Syntax of for loop
