@@ -11,9 +11,6 @@
 (function () {
   console.log("Welcome to Javascript");
 })();
-// for in loop through the  properties of an object
-
-// for of loops through the values of an iterable object
 
 //loops through a block of code while a specified condition is true
 // Syntax;

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: blueviolet;
+}
+.container {
+  max-width: 500px;
+  margin: 100px auto;
+  border-radius: 10px;
+  background-color: white;
+  border-bottom: 1px black;
+}
+.input-item,
+.new-items {
+  padding: 0 120px;
+}
+.input-item {
+  border-bottom: 1px solid rgb(225, 185, 185);
+}
+.item-details {
+  height: 50vh;
+}
+.new-items {
+  margin-top: 20px;
+}
