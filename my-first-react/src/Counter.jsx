@@ -1,13 +1,14 @@
-import React from "react";
-
-export default class TestInterval extends React.Component {
+import React, { Component } from "react";
+import Child from "./Child";
+export default class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      countDown: 0, // An integer from father component
+      countDown: 0,
     };
   }
   increment = () => {
+    console.log("i am running");
     this.interval = setInterval(() => {
       this.setState((prevState) => ({
         countDown: prevState.countDown + 1,
@@ -19,31 +20,33 @@ export default class TestInterval extends React.Component {
       this.setState((prevState) => ({
         countDown: prevState.countDown - 1,
       }));
-      if (this.state.countDown === 0) {
-        this.stopCountDown();
-        this.setState({
-          countDown: 0,
-        });
-      }
+      // if (this.state.countDown === 0) {
+      //   this.stopCountDown();
+      //   this.setState({
+      //     countDown: 0,
+      //   });
+      // }
     }, 1000);
   };
   startDecrement = () => {
-    clearInterval(this.interval);
-    this.decrement(false);
+    this.stopCountDown();
+    this.decrement();
   };
   startIncrement = () => {
-    clearInterval(this.interval);
-    this.increment(true);
+    this.stopCountDown();
+    this.increment();
   };
   stopCountDown = () => {
     clearInterval(this.interval);
   };
 
   render() {
+    console.log(this, "test this value");
     return (
       <div>
-        <p>{this.state.countDown}</p>
-        <button onClick={this.startIncrement}>Start Incement</button>
+        <Child countDown={this.state.countDown} test={this.state.countDown} />
+        {/* <p>{this.props.children}</p> */}
+        <button onClick={this.startIncrement}>Start Increment</button>
         <button onClick={this.startDecrement}>Start decrement</button>
         <button onClick={this.stopCountDown}>Stop</button>
       </div>

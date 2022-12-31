@@ -1,10 +1,15 @@
 import "./App.css";
-import ClassComponentDemo from "./ClassComponentDemo";
-import ComponentLifeCycle from "./ComponentLifeCycle";
-import ComponentUnmounting from "./ComponentUnmounting";
-import ComponentUpdating from "./ComponentUpdating";
+// import Child from "./Child";
+// import ClassComponentDemo from "./ClassComponentDemo";
+// import ComponentLifeCycle from "./ComponentLifeCycle";
+// import ComponentUnmounting from "./ComponentUnmounting";
+// import ComponentUpdating from "./ComponentUpdating";
+// import Counter from "./Counter";
+// import LoginForm from "./Form";
+// import { Fruits } from "./Fruits";
+// import List from "./List";
+import RegistrationForm from "./RegistrationForm";
 function App() {
-  let name = "Ruby";
   return (
     <div className="App">
       {/* <ClassComponentDemo /> */}
@@ -12,6 +17,12 @@ function App() {
       {/* <ComponentUpdating updatedName="Javascript" />
       <ComponentUnmounting /> */}
       {/* <ComponentUnmounting /> */}
+      {/* <Counter /> */}
+      {/* <Counter /> */}
+      {/* <List /> */}
+      {/* <Fruits /> */}
+      <RegistrationForm />
+      {/* <LoginForm />  */}
     </div>
   );
 }
