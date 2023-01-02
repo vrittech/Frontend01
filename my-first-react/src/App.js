@@ -1,30 +1,21 @@
+import { useState } from "react";
 import "./App.css";
-// import Child from "./Child";
-// import ClassComponentDemo from "./ClassComponentDemo";
-// import ComponentLifeCycle from "./ComponentLifeCycle";
-// import ComponentUnmounting from "./ComponentUnmounting";
-// import ComponentUpdating from "./ComponentUpdating";
-// import Counter from "./Counter";
-// import LoginForm from "./Form";
-// import { Fruits } from "./Fruits";
-// import List from "./List";
+import LoginForm from "./Login";
+
 import RegistrationForm from "./RegistrationForm";
 function App() {
+  const [isRegistered, setIsRegistered] = useState(false);
   return (
     <div className="App">
-      {/* <ClassComponentDemo /> */}
-      {/* <ComponentLifeCycle name1={name} /> */}
-      {/* <ComponentUpdating updatedName="Javascript" />
-      <ComponentUnmounting /> */}
-      {/* <ComponentUnmounting /> */}
-      {/* <Counter /> */}
-      {/* <Counter /> */}
-      {/* <List /> */}
-      {/* <Fruits /> */}
-      <RegistrationForm />
-      {/* <LoginForm />  */}
+      {isRegistered ? (
+        <LoginForm />
+      ) : (
+        <RegistrationForm setIsRegistered={setIsRegistered} />
+      )}
     </div>
   );
 }
 
 export default App;
+// Meeting ID: 212 664 2141
+// Passcode: 348991

@@ -1,19 +1,10 @@
-import { useEffect } from "react";
 import { useState } from "react";
-const RegistrationForm = ({ setIsRegistered }) => {
-  console.log(setIsRegistered, "setIsRegistered");
+const LoginForm = () => {
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: "",
-    confirmPassword: "",
-    submit: false,
   });
-  const { username, password, confirmPassword } = userInfo;
-  const [errorMessage, setErrorMessage] = useState("");
-  useEffect(() => {
-    console.log("i am effect");
-  }, [userInfo.username, userInfo.password]);
-
+  const { username, password } = userInfo;
   const handleUserName = ({ target: { value } }) => {
     console.log(value, "event");
     setUserInfo((prevValue) => {
@@ -22,26 +13,14 @@ const RegistrationForm = ({ setIsRegistered }) => {
     });
   };
   console.log(userInfo, "userInfo");
-  // handle password field
   const handlePassword = ({ target: { value } }) => {
-    // update the value of pw
     setUserInfo({ ...userInfo, password: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     username !== "" && password !== ""
-      ? alert(
-          password === confirmPassword
-            ? "Data Submitted"
-            : "password must match!"
-        )
+      ? alert("Data Submitted")
       : alert("Fill Data!");
-    setUserInfo({ ...userInfo, submit: true });
-    setIsRegistered(true);
-  };
-  const handleConfirmPassword = ({ target: { value } }) => {
-    setUserInfo({ ...userInfo, confirmPassword: value });
-    setErrorMessage(userInfo.password !== value && "Password must match!");
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -57,8 +36,8 @@ const RegistrationForm = ({ setIsRegistered }) => {
       <br />
       <label>Password</label>
       <input
-        type="text"
-        id="password"
+        type="password"
+        id="password-input"
         placeholder="Password"
         // onKeyUp={handleKeyUp}
         value={userInfo.password}
@@ -66,24 +45,15 @@ const RegistrationForm = ({ setIsRegistered }) => {
       />
       <br />
       <br />
-      <label> Confirm Password</label>
-      <input
-        type="text"
-        id="c-password"
-        placeholder="Password"
-        value={userInfo.confirmPassword}
-        onChange={handleConfirmPassword}
-      />
-      <p style={{ color: "red" }}>{errorMessage}</p>
       <button
-        // type="submit"
+        type="submit"
         id="button-input"
         // disabled={isEnable}
         // onClick={handleSubmit}
       >
-        Register
+        Login
       </button>
     </form>
   );
 };
-export default RegistrationForm;
+export default LoginForm;
