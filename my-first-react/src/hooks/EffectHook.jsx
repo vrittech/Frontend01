@@ -18,15 +18,21 @@ const Timer = () => {
   // 	//And any time any dependency value changes
   //   }, [prop, state]);
   useEffect(() => {
-    document.title = `I am running ${count} times`;
     console.log("i am running");
+    const interval = setInterval(() => {
+      setCount((prev) => prev + 1);
+    }, 1000);
+    //clean up function
+    return () => {
+      console.log("i am clean up function");
+      clearInterval(interval);
+    };
   }, [count]);
   // handle increment
   const handleIncrement = () => {
     // setCount(count + 1);
     setCount((prev) => prev + 1);
   };
-  console.log("i am test");
   return (
     <h1>
       <p>{count}</p>
